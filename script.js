@@ -1,7 +1,8 @@
 const texts = [
   "Electrical Engineer ",
   "UI/UX Designer ",
-  "Data Analyst "
+  "Data Analyst ",
+  "Software Development "
 ];
 
 let count = 0;
@@ -27,13 +28,13 @@ function type() {
 
   if (!isDeleting && index === currentText.length) {
     isDeleting = true;
-    setTimeout(type, 1200);
+    setTimeout(type, 1000);
   } else if (isDeleting && index === 0) {
     isDeleting = false;
     count++;
     setTimeout(type, 350);
   } else {
-    setTimeout(type, isDeleting ? 60 : 100);
+    setTimeout(type, isDeleting ? 60 : 50);
   }
 }
 
