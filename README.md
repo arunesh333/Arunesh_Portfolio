@@ -1,15 +1,30 @@
-# 💼 Arunesh E - Personal Portfolio
+#  Arunesh E - Personal Portfolio
 
-Welcome to my personal portfolio repository!  
-I'm an Electrical and Electronics Engineering student at SASTRA Deemed University, and I'm interested in software systems, web design, data analytics, and electric vehicle technologies.
+🔗 [Visit My Portfolio](https://aruneshdev.netlify.app/)
 
-## 🚀 What’s Inside?
+Welcome to my personal portfolio repository!
 
-This portfolio showcases:
-- 🛠️ My projects in C++, Python, JavaScript, and more
-- ⚡ Electrical systems experience
-- 🌐 Web Design (HTML/CSS/JS, Figma)
+I'm an Electrical and Electronics Engineering student at **SASTRA Deemed University**, passionate about:
+- Software systems & development
+- Web design and front-end technologies
+- Data analytics
+- Electric vehicle technologies
 
-## 🌟 Live Portfolio
+---
 
-🔗 [Visit Portfolio](https://aruneshdev.netlify.app/)
+##  What’s Inside?
+
+This portfolio highlights:
+-  Projects in **C++, Python, JavaScript**
+-  Hands-on **electrical systems** experience
+-  Web design using **HTML/CSS/JS**, **Figma**
+
+---
+
+## 🤝 Connect With Me
+
+-  Email: [2005arunesh@gmail.com](mailto:2005arunesh@gmail.com)
+-  LinkedIn: [linkedin.com/in/arunesh33](https://www.linkedin.com/in/arunesh33/)
+-  GitHub: [github.com/arunesh333](https://github.com/arunesh333)
+
+---
