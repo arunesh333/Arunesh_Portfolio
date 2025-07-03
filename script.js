@@ -1,7 +1,6 @@
 const texts = [
   "Electrical Engineer ",
   "UI/UX Designer ",
-  "Data Analyst ",
   "Software Development "
 ];
 
