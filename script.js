@@ -94,15 +94,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ==================== MOBILE NAVIGATION (HAMBURGER) ====================
+  // **FIX**: Enhanced with scroll lock and focus management
   const hamburger = document.getElementById('hamburger');
   const mainNav = document.getElementById('main-nav');
   const navLinks = mainNav.querySelectorAll('.nav-link');
+  const bodyEl = document.body;
 
   hamburger?.addEventListener('click', () => {
+    const isOpening = !hamburger.classList.contains('active'); // Check state before toggling
     hamburger.classList.toggle('active');
     mainNav.classList.toggle('mobile-open');
+    bodyEl.classList.toggle('nav-open'); // Toggle body scroll lock
+
     const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
     hamburger.setAttribute('aria-expanded', !isExpanded);
+    
+    // Manage focus
+    if (isOpening) {
+      navLinks[0].focus(); // Focus the first link when menu opens
+    }
   });
 
   // Close mobile menu when a link is clicked
@@ -111,7 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (mainNav.classList.contains('mobile-open')) {
         hamburger.classList.remove('active');
         mainNav.classList.remove('mobile-open');
+        bodyEl.classList.remove('nav-open'); // Ensure scroll lock is removed
         hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.focus(); // Return focus to the hamburger button
       }
     });
   });

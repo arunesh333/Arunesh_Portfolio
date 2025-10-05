@@ -42,8 +42,10 @@
   --transition-speed: 0.3s;
   --transition-curve: cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Orbit animation variable */
+  /* Orbit animation variables */
   --orbit-radius: clamp(200px, 30vw, 320px);
+  --orbit-scale-x: 1.4;
+  --orbit-scale-y: 0.85;
 }
 /* Light Theme */
 [data-theme="light"] {
@@ -80,6 +82,10 @@ body {
   overflow-x: hidden;
   transition: background var(--transition-speed) var(--transition-curve),
               color var(--transition-speed) var(--transition-curve);
+}
+/* **FIX**: Prevents background scroll when mobile nav is open */
+body.nav-open {
+  overflow: hidden;
 }
 /* ==================== ANIMATED BACKGROUND ==================== */
 #background-canvas {
@@ -250,6 +256,7 @@ body.scrolled .main-header {
   display: flex;
   gap: var(--spacing-sm);
   align-items: center;
+  pointer-events: auto; /* FIX: Allow clicks on buttons */
 }
 /* Theme Toggle */
 .theme-toggle {
@@ -363,6 +370,8 @@ body.scrolled .main-header {
   height: 1px;
   pointer-events: none; /* Container itself is not interactive */
   transition: opacity 0.8s var(--transition-curve);
+  /* FIX: Center the anchor point and apply the oval shape */
+  transform: translate(-50%, -50%) scale(var(--orbit-scale-x), var(--orbit-scale-y));
 }
 
 /* Fade out on scroll */
@@ -405,39 +414,40 @@ body.scrolled .orbital-nav.new-design {
 /* Keyframes for each button's unique starting position and 360-degree path.
    The pattern is: rotate(angle) -> move out by radius -> counter-rotate(-angle) to keep text upright. */
 
+/* FIX: Added inverse scale to un-distort buttons */
 @keyframes orbit-1 { /* Starts at 180deg (Left) */
-  from { transform: rotate(180deg) translateX(var(--orbit-radius)) rotate(-180deg); }
-  to   { transform: rotate(540deg) translateX(var(--orbit-radius)) rotate(-540deg); }
+  from { transform: rotate(180deg) translateX(var(--orbit-radius)) rotate(-180deg) scale(calc(1 / var(--orbit-scale-x)), calc(1 / var(--orbit-scale-y))); }
+  to   { transform: rotate(540deg) translateX(var(--orbit-radius)) rotate(-540deg) scale(calc(1 / var(--orbit-scale-x)), calc(1 / var(--orbit-scale-y))); }
 }
 .orbital-btn-1 { animation-name: orbit-1; }
 
 @keyframes orbit-2 { /* Starts at 240deg */
-  from { transform: rotate(240deg) translateX(var(--orbit-radius)) rotate(-240deg); }
-  to   { transform: rotate(600deg) translateX(var(--orbit-radius)) rotate(-600deg); }
+  from { transform: rotate(240deg) translateX(var(--orbit-radius)) rotate(-240deg) scale(calc(1 / var(--orbit-scale-x)), calc(1 / var(--orbit-scale-y))); }
+  to   { transform: rotate(600deg) translateX(var(--orbit-radius)) rotate(-600deg) scale(calc(1 / var(--orbit-scale-x)), calc(1 / var(--orbit-scale-y))); }
 }
 .orbital-btn-2 { animation-name: orbit-2; }
 
 @keyframes orbit-3 { /* Starts at 300deg */
-  from { transform: rotate(300deg) translateX(var(--orbit-radius)) rotate(-300deg); }
-  to   { transform: rotate(660deg) translateX(var(--orbit-radius)) rotate(-660deg); }
+  from { transform: rotate(300deg) translateX(var(--orbit-radius)) rotate(-300deg) scale(calc(1 / var(--orbit-scale-x)), calc(1 / var(--orbit-scale-y))); }
+  to   { transform: rotate(660deg) translateX(var(--orbit-radius)) rotate(-660deg) scale(calc(1 / var(--orbit-scale-x)), calc(1 / var(--orbit-scale-y))); }
 }
 .orbital-btn-3 { animation-name: orbit-3; }
 
 @keyframes orbit-4 { /* Starts at 0deg (Right) */
-  from { transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg); }
-  to   { transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg); }
+  from { transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg) scale(calc(1 / var(--orbit-scale-x)), calc(1 / var(--orbit-scale-y))); }
+  to   { transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg) scale(calc(1 / var(--orbit-scale-x)), calc(1 / var(--orbit-scale-y))); }
 }
 .orbital-btn-4 { animation-name: orbit-4; }
 
 @keyframes orbit-5 { /* Starts at 60deg */
-  from { transform: rotate(60deg) translateX(var(--orbit-radius)) rotate(-60deg); }
-  to   { transform: rotate(420deg) translateX(var(--orbit-radius)) rotate(-420deg); }
+  from { transform: rotate(60deg) translateX(var(--orbit-radius)) rotate(-60deg) scale(calc(1 / var(--orbit-scale-x)), calc(1 / var(--orbit-scale-y))); }
+  to   { transform: rotate(420deg) translateX(var(--orbit-radius)) rotate(-420deg) scale(calc(1 / var(--orbit-scale-x)), calc(1 / var(--orbit-scale-y))); }
 }
 .orbital-btn-5 { animation-name: orbit-5; }
 
 @keyframes orbit-6 { /* Starts at 120deg */
-  from { transform: rotate(120deg) translateX(var(--orbit-radius)) rotate(-120deg); }
-  to   { transform: rotate(480deg) translateX(var(--orbit-radius)) rotate(-480deg); }
+  from { transform: rotate(120deg) translateX(var(--orbit-radius)) rotate(-120deg) scale(calc(1 / var(--orbit-scale-x)), calc(1 / var(--orbit-scale-y))); }
+  to   { transform: rotate(480deg) translateX(var(--orbit-radius)) rotate(-480deg) scale(calc(1 / var(--orbit-scale-x)), calc(1 / var(--orbit-scale-y))); }
 }
 .orbital-btn-6 { animation-name: orbit-6; }
 
@@ -1013,7 +1023,7 @@ body.scrolled .orbital-nav.new-design {
     position: static;
     width: 100%;
     height: auto;
-    display: grid; /* Use grid for a cleaner, more robust layout */
+    display: none; /* Use grid for a cleaner, more robust layout */
     grid-template-columns: repeat(2, 1fr); /* Two columns */
     gap: var(--spacing-sm);
     margin-top: var(--spacing-xl); /* More space from the subtitle */
