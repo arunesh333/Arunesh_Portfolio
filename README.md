@@ -12,15 +12,6 @@ I'm an Electrical and Electronics Engineering student at **SASTRA Deemed Univers
 
 ---
 
-##  What’s Inside?
-
-This portfolio highlights:
--  Projects in **C++, Python, JavaScript**
--  Hands-on **electrical systems** experience
--  Web design using **HTML/CSS/JS**, **Figma**
-
----
-
 ## 🤝 Connect With Me
 
 -  Email: [2005arunesh@gmail.com](mailto:2005arunesh@gmail.com)
