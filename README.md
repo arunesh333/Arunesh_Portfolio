@@ -1,21 +1,22 @@
-#  Arunesh E - Personal Portfolio
+# Arunesh E — Portfolio
 
-🔗 [Visit My Portfolio](https://aruneshdev.netlify.app/)
+🔗 https://aruneshe.vercel.app/
 
-Welcome to my personal portfolio repository!
-
-I'm an Electrical and Electronics Engineering student at **SASTRA Deemed University**, passionate about:
-- Software systems & development
-- Web design and front-end technologies
-- Data analytics
-- Electric vehicle technologies
+Personal engineering portfolio.
 
 ---
 
-## 🤝 Connect With Me
-
--  Email: [2005arunesh@gmail.com](mailto:2005arunesh@gmail.com)
--  LinkedIn: [linkedin.com/in/arunesh33](https://www.linkedin.com/in/arunesh33/)
--  GitHub: [github.com/arunesh333](https://github.com/arunesh333)
+## Stack
+- HTML, CSS, JavaScript  
+- Vercel
 
 ---
+
+## Status
+Actively maintained.
+
+---
+
+## Links
+- LinkedIn: https://www.linkedin.com/in/arunesh33  
+- GitHub: https://github.com/arunesh333  
