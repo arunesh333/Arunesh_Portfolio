@@ -87,3 +87,10 @@ document.querySelector(".nav-toggle")
   ?.addEventListener("click", () => {
     document.querySelector(".nav")?.classList.toggle("open");
   });
+  
+const resumeAnchor = document.getElementById("resumeAnchor");
+const resumeBtn = document.getElementById("resumeBtn");
+
+resumeBtn.addEventListener("click", () => {
+  resumeAnchor.classList.toggle("active");
+});

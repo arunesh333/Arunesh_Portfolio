@@ -178,7 +178,7 @@ body {
 
 .tagline {
   margin: 24px auto 0;
-  max-width: 520px;
+  max-width: 600px;
   font-size: 16px;
   color: #475569;
 }
@@ -905,10 +905,104 @@ a {
   }
 
   .tagline {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .project-image img {
     height: 160px;
   }
+}
+/* ===== CTA ROW ===== */
+
+
+/* CTA row stays stable */
+.cta-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Anchor for absolute positioning */
+.resume-anchor {
+  position: relative;
+}
+
+/* Resume button */
+.resume-btn {
+  width: 120px;
+  height: 40px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+/* Text states */
+.resume-text,
+.resume-x {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease, transform 0.3s ease;
+}
+
+.resume-x {
+  opacity: 0;
+}
+
+/* Anchor must allow overflow */
+.resume-anchor {
+  position: relative;
+  overflow: visible;
+}
+
+/* POP DOWN container */
+.resume-pop {
+  position: absolute;
+  top: calc(100% + 10px);   /* drop below Resume */
+  left: 50%;
+  transform: translate(-50%, -8px);
+
+  display: flex;
+  flex-direction: column;  /* STACK DOWN */
+  gap: 8px;
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Active state */
+.resume-anchor.active .resume-pop {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+
+/* Active state */
+.resume-anchor.active .resume-btn {
+  width: 40px;
+}
+
+.resume-anchor.active .resume-text {
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+.resume-anchor.active .resume-x {
+  opacity: 1;
+}
+
+.resume-anchor.active .resume-pop {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+  pointer-events: auto;
 }
