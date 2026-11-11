@@ -596,7 +596,7 @@ section {
 /* Card */
 .exp-card {
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto 40px auto; /* bottom space added */
   background: var(--card);
   border-radius: 18px;
   padding: 28px 32px;

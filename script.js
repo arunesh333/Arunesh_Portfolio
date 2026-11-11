@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const roles = [
     "Electrical Engineer",
     "EV Enthusiast",
-    "Embedded Systems Developer"
+    "Electrical Harness Designer"
   ];
 
   const el = document.getElementById("typewriter");
